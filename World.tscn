@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Icon.gd" type="Script" id=2]
+[ext_resource path="res://NPCs/blue-slime.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NPCs/green-slime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/PlayerCam.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 2.0
+
+[node name="World" type="YSort"]
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( -3, -23 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="Icon"]
+one_shot = true
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 43, 57 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 122, 75 )
+
+[node name="PlayerCam" type="KinematicBody2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerCam"]
+current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCam"]
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="Icon/Timer" to="Icon" method="_OnTimerEnd"]
