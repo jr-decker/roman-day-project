@@ -10,7 +10,7 @@ func _ready():
 	pass 
 
 
-func _process(delta):
+func _physics_process(delta):
 	
 	var target = get_global_mouse_position()
 	
