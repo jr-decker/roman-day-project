@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const SPEED = 150 #8000
-const ACCELERATION = 9000
+const SPEED = 100 
+const ACCELERATION = 4000
 
 var input_vector: Vector2 = Vector2.ZERO
 var movement_vector: Vector2 = Vector2.ZERO

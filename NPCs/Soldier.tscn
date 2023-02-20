@@ -9,7 +9,7 @@ extents = Vector2( 4, 4.5 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
-length = 0.52
+length = 0.6
 loop = true
 step = 0.02
 tracks/0/type = "value"
@@ -19,7 +19,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.36 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 2, 4 ]
@@ -78,7 +78,6 @@ script = ExtResource( 2 )
 position = Vector2( 1, -6 )
 texture = ExtResource( 1 )
 hframes = 6
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.5 )
