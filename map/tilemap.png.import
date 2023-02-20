@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue-slime.png-9ff5d4a2513ee837b037f8049dcffcff.stex"
+path="res://.import/tilemap.png-d0e16b94343ef1c87daf4c6a56be79d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blue-slime.png"
-dest_files=[ "res://.import/blue-slime.png-9ff5d4a2513ee837b037f8049dcffcff.stex" ]
+source_file="res://map/tilemap.png"
+dest_files=[ "res://.import/tilemap.png-d0e16b94343ef1c87daf4c6a56be79d3.stex" ]
 
 [params]
 

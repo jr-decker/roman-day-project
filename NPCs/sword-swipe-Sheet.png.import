@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/green-slime.png-096ef5abf949333de487dbd9add5ba03.stex"
+path="res://.import/sword-swipe-Sheet.png-c36f82158e3ffdbd02284ce15f123097.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/green-slime.png"
-dest_files=[ "res://.import/green-slime.png-096ef5abf949333de487dbd9add5ba03.stex" ]
+source_file="res://NPCs/sword-swipe-Sheet.png"
+dest_files=[ "res://.import/sword-swipe-Sheet.png-c36f82158e3ffdbd02284ce15f123097.stex" ]
 
 [params]
 

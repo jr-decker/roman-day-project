@@ -1,37 +1,116 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Icon.gd" type="Script" id=2]
-[ext_resource path="res://NPCs/blue-slime.tscn" type="PackedScene" id=3]
-[ext_resource path="res://NPCs/green-slime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NPCs/Soldier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GUI/PlayerCam.gd" type="Script" id=5]
+[ext_resource path="res://map/tilemap.png" type="Texture" id=6]
+
+[sub_resource type="TileSet" id=3]
+0/name = "dirt"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 48, 48, 48 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "brick"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 96, 48, 16 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="TileSet" id=2]
+0/name = "grass"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 48 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27, Vector2( 3, 0 ), 255, Vector2( 3, 1 ), 219, Vector2( 3, 2 ), 507, Vector2( 4, 0 ), 63, Vector2( 4, 2 ), 504, Vector2( 5, 0 ), 447, Vector2( 5, 1 ), 438, Vector2( 5, 2 ), 510 ]
+0/autotile/icon_coordinate = Vector2( 1, 1 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 2.0
 
-[node name="World" type="YSort"]
+[node name="World" type="Node2D"]
 
-[node name="Icon" type="Sprite" parent="."]
-position = Vector2( -3, -23 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+[node name="ground" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -327679, 0, 0, -327678, 1, 0, -327677, 1, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -262143, 1, 0, -262142, 1, 1, -262141, 1, 0, -262140, 0, 131072, -262139, 0, 0, -262138, 0, 65538, -262137, 0, 65537, -262136, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -196608, 0, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 2, -196604, 1, 0, -196603, 1, 2, -196602, 0, 65536, -196601, 0, 0, -196600, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 65536, -65541, 0, 65537, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 1, 1, -131069, 1, 0, -131068, 1, 2, -131067, 1, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -8, 0, 0, -7, 0, 131072, -6, 0, 1, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 131072, -1, 0, 65536, -65536, 0, 1, -65535, 0, 0, -65534, 1, 0, -65533, 1, 1, -65532, 1, 0, -65531, 1, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 2, 65531, 0, 1, 65532, 0, 131074, 65533, 0, 65536, 65534, 0, 65537, 65535, 0, 0, 0, 0, 65538, 1, 0, 0, 2, 1, 2, 3, 1, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 65537, 131067, 0, 0, 131068, 0, 131072, 131069, 0, 0, 131070, 0, 65538, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0 )
 
-[node name="Timer" type="Timer" parent="Icon"]
-one_shot = true
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 43, 57 )
-
-[node name="KinematicBody2D2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 122, 75 )
+[node name="grass" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 1, -327688, 0, 1, -327687, 0, 131076, -327686, 0, 131076, -327685, 0, 131076, -327684, 0, 1, -327683, 0, 131076, -327682, 0, 131076, -327681, 0, 131076, -393216, 0, 131076, -393215, 0, 1, -393214, 0, 1, -393213, 0, 1, -393212, 0, 131076, -393211, 0, 131076, -393210, 0, 131076, -393209, 0, 1, -393208, 0, 1, -393207, 0, 2, -262154, 0, 65536, -262153, 0, 65537, -262152, 0, 65537, -262151, 0, 65537, -262150, 0, 65537, -262149, 0, 65537, -262148, 0, 65537, -262147, 0, 65537, -262146, 0, 65537, -262145, 0, 65537, -327680, 0, 65537, -327679, 0, 3, -327678, 0, 4, -327677, 0, 4, -327676, 0, 131073, -327675, 0, 4, -327674, 0, 131073, -327673, 0, 4, -327672, 0, 5, -327671, 0, 65538, -196618, 0, 65536, -196617, 0, 65537, -196616, 0, 65537, -196615, 0, 65537, -196614, 0, 65537, -196613, 0, 65537, -196612, 0, 65537, -196611, 0, 65537, -196610, 0, 65537, -196609, 0, 65537, -262144, 0, 65537, -262143, 0, 65539, -262136, 0, 65541, -262135, 0, 65538, -131082, 0, 65536, -131081, 0, 65537, -131080, 0, 65537, -131079, 0, 3, -131078, 0, 131073, -131077, 0, 4, -131076, 0, 4, -131075, 0, 5, -131074, 0, 65537, -131073, 0, 65537, -196608, 0, 3, -196607, 0, 131074, -196600, 0, 65536, -196599, 0, 65538, -65546, 0, 65536, -65545, 0, 65537, -65544, 0, 3, -65543, 0, 131074, -65539, 0, 131072, -65538, 0, 131073, -65537, 0, 131073, -131072, 0, 131074, -131067, 0, 0, -131066, 0, 1, -131065, 0, 1, -131064, 0, 131077, -131063, 0, 65539, -10, 0, 65541, -9, 0, 65537, -8, 0, 65538, -65533, 0, 0, -65532, 0, 131076, -65531, 0, 131077, -65530, 0, 65537, -65529, 0, 65537, -65528, 0, 65537, -65527, 0, 65538, 65526, 0, 65536, 65527, 0, 65537, 65528, 0, 65538, 1, 0, 0, 2, 0, 131076, 3, 0, 131077, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 65538, 131062, 0, 65541, 131063, 0, 65537, 131064, 0, 131075, 131065, 0, 2, 131071, 0, 0, 65536, 0, 1, 65537, 0, 131077, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 65538, 196598, 0, 65536, 196599, 0, 65537, 196600, 0, 65537, 196601, 0, 131075, 196602, 0, 1, 196603, 0, 1, 196604, 0, 1, 196605, 0, 1, 196606, 0, 131076, 196607, 0, 131077, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 65538, 262134, 0, 65536, 262135, 0, 65537, 262136, 0, 65537, 262137, 0, 65537, 262138, 0, 65537, 262139, 0, 65537, 262140, 0, 65537, 262141, 0, 65537, 262142, 0, 65537, 262143, 0, 65537, 196608, 0, 65537, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65539, 327670, 0, 65541, 327671, 0, 65537, 327672, 0, 65537, 327673, 0, 65537, 327674, 0, 65537, 327675, 0, 65537, 327676, 0, 65537, 327677, 0, 65537, 327678, 0, 65537, 327679, 0, 65537, 262144, 0, 65537, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65537, 262153, 0, 65538, 393206, 0, 131072, 393207, 0, 131073, 393208, 0, 4, 393209, 0, 131073, 393210, 0, 131073, 393211, 0, 131073, 393212, 0, 131073, 393213, 0, 131073, 393214, 0, 4, 393215, 0, 131073, 327680, 0, 4, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 4, 327686, 0, 4, 327687, 0, 4, 327688, 0, 131073, 327689, 0, 131074 )
 
 [node name="PlayerCam" type="KinematicBody2D" parent="."]
 script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCam"]
 current = true
+limit_left = -1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCam"]
 shape = SubResource( 1 )
+disabled = true
 
-[connection signal="timeout" from="Icon/Timer" to="Icon" method="_OnTimerEnd"]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Soldier" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -67, 3 )
+
+[node name="Soldier2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -21, -23 )
+
+[node name="Soldier3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -68, -63 )
+
+[node name="Soldier4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 52, -38 )
