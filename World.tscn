@@ -105,12 +105,18 @@ disabled = true
 
 [node name="Soldier" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( -67, 3 )
+layer_of_collision = 3
+target_layer = 2
 
 [node name="Soldier2" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( -21, -23 )
+layer_of_collision = 3
+target_layer = 2
 
 [node name="Soldier3" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( -68, -63 )
+target_layer = 3
 
 [node name="Soldier4" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 52, -38 )
+target_layer = 3

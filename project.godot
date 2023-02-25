@@ -89,6 +89,11 @@ ui_down={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_2="Hitbox"
+2d_render/layer_3="Hurtbox"
+
 [physics]
 
 common/enable_pause_aware_picking=true

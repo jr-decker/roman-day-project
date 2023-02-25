@@ -6,11 +6,20 @@ const ACCELERATION = 1200
 var movement_vector: Vector2 = Vector2.ZERO
 var is_attacking: bool = false
 
-func _ready():
-	pass 
+var health = 4
 
+export var layer_of_collision = 2
+export var target_layer = 0
+
+func _ready():
+	
+	$Hitbox.collision_layer = layer_of_collision
+	$Hitbox.collision_mask = target_layer
 
 func _physics_process(delta):
+	
+	if health <= 0:
+		$SoldierTexture.hide()
 	
 	var target = get_global_mouse_position()
 	
@@ -54,3 +63,10 @@ func EndOfAttack():
 	
 	is_attacking = false
 	$SwordSwipe.hide()
+
+
+func _on_Hitbox_body_entered(body):
+	
+	print(self, body)
+	
+	health -= 1
