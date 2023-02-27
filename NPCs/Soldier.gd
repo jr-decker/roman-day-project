@@ -26,7 +26,7 @@ func _ready():
 	
 	round_start.connect("new_target", self, "new_target")
 	round_start.connect("next_target", self, "next_target")
-	round_start.connect("game_over", self, "game_over")
+	round_start.connect("game_over", self, "game_is_over")
 
 func _physics_process(delta):
 	if game_over:
@@ -63,7 +63,7 @@ func next_target(attacker, target):
 	
 	next_target = target
 
-func game_over():
+func game_is_over():
 	game_over = true
 
 func move(target: Vector2, delta):
@@ -72,6 +72,8 @@ func move(target: Vector2, delta):
 	target_vector = target_vector.rotated(PI / 16)
 	
 	move_and_slide(target_vector)
+	
+	$Hurtbox.look_at(target_vector)
 	
 	if target_vector == Vector2.ZERO:
 		$WalkAnimation.stop()
@@ -97,7 +99,7 @@ func attack(attack_target: Vector2):
 	is_attacking = true
 	
 	$SwordSwipe.look_at(attack_target)
-	$Hurtbox.look_at(attack_target)
+	#$Hurtbox.look_at(attack_target)
 	
 	# The animation relative to the soldier is by default (-PI / 2) off, just because the animation faces down not right.
 	# So this corrects that.

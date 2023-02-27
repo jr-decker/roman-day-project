@@ -148,11 +148,11 @@ position = Vector2( 59, -32 )
 position = Vector2( 98, -34 )
 
 [node name="EnemySoldier" parent="." instance=ExtResource( 3 )]
-position = Vector2( -136, 8 )
+position = Vector2( -136, 42 )
 enemy_soldier = true
 
 [node name="EnemySoldier2" parent="." instance=ExtResource( 3 )]
-position = Vector2( -137, 39 )
+position = Vector2( -132, 67 )
 enemy_soldier = true
 
 [node name="EnemySoldier3" parent="." instance=ExtResource( 3 )]
@@ -172,11 +172,11 @@ position = Vector2( 20, 41 )
 enemy_soldier = true
 
 [node name="EnemySoldier7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 60, 22 )
+position = Vector2( 58, 32 )
 enemy_soldier = true
 
 [node name="EnemySoldier8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 98, 4 )
+position = Vector2( 100, 48 )
 enemy_soldier = true
 
 [node name="EnemySoldier9" parent="." instance=ExtResource( 3 )]
@@ -196,9 +196,9 @@ position = Vector2( 18, 71 )
 enemy_soldier = true
 
 [node name="EnemySoldier13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 59, 53 )
+position = Vector2( 59, 77 )
 enemy_soldier = true
 
 [node name="EnemySoldier14" parent="." instance=ExtResource( 3 )]
-position = Vector2( 105, 47 )
+position = Vector2( 102, 77 )
 enemy_soldier = true
