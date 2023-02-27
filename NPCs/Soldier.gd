@@ -115,21 +115,28 @@ func end_of_attack():
 	$SwordSwipe.hide()
 
 func _on_Hitbox_area_entered(area):
-	if $DamageCooldown.is_processing():
-		return
-		
+	
 	health -= 1
 	
 	is_being_pushed = true
 	
-	$DamageCooldown.start(1)
 	$PushedTimer.start(0.2)
+	
+	# Make the soldier red when hit and being pushed.
+	$SoldierTexture.modulate.r = 0.86
+	$SoldierTexture.modulate.g = 0.11
+	$SoldierTexture.modulate.b = 0.11
 
 func _on_Hurtbox_area_entered(area):
 	attack(attack_target.global_position)
 
 func _on_PushedTimer_timeout():
 	is_being_pushed = false
+	
+	# Switch the soldiers colors back to normal after being hit.
+	$SoldierTexture.modulate.r = 1
+	$SoldierTexture.modulate.g = 1
+	$SoldierTexture.modulate.b = 1
 
 func die():
 	is_dead = true
