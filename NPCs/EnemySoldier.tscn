@@ -2,7 +2,7 @@
 
 [ext_resource path="res://NPCs/Soldier.gd" type="Script" id=1]
 [ext_resource path="res://NPCs/sword-swipe-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://NPCs/roman soldier-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://NPCs/cathaginian soldier-Sheet.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=13]
 radius = 3.60555
@@ -80,9 +80,9 @@ extents = Vector2( 6, 10.5 )
 
 [node name="EnemySoldier" type="KinematicBody2D"]
 script = ExtResource( 1 )
+enemy_soldier = true
 
 [node name="SoldierTexture" type="Sprite" parent="."]
-self_modulate = Color( 0.6, 1, 1, 1 )
 position = Vector2( 1, -6 )
 texture = ExtResource( 3 )
 hframes = 6
